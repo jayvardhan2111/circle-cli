@@ -12,9 +12,7 @@ jobs:
       - run:
           name: Deploy to S3
           command: |
-            env
-            ls -a
-            aws s3 ls
+            aws s3 cp ./index.html s3://jay-static
 
 workflows:
   version: 2
