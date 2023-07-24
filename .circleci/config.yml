@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Deploy to S3
           command: |
-            aws s3 sync ./index.html s3://jay-static
+            aws s3 sync index.html s3://jay-static
             aws cloudfront create-invalidation --distribution-id E2LJ0NCHPMZVK8 --paths "/*"
 workflows:
   version: 2
