@@ -4,9 +4,9 @@ orbs:
 jobs:
   deploy:
     docker:
-      - image: circleci/aws-cli # This image includes the AWS CLI tools
+      - image: circleci/aws-cli 
     steps:
-      - checkout # Pulls the code from the repository
+      - checkout 
       - run:
           name: Deploy to S3
           command: |
@@ -15,3 +15,9 @@ jobs:
             AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
             AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
             AWS_DEFAULT_REGION: 'ap-south-1'
+
+workflows:
+  version: 2
+  deploy-to-s3:
+    jobs:
+      - deploy
