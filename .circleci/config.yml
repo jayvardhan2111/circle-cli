@@ -11,6 +11,7 @@ jobs:
           name: Deploy to S3
           command: |
             pwd
+            ls -a
             # aws s3 cp index.html s3://jay-static/ 
           environment:
             AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
