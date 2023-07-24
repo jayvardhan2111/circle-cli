@@ -10,6 +10,7 @@ jobs:
       - run:
           name: Deploy to S3
           command: |
+            env
             ls -a
             aws s3 ls
 
