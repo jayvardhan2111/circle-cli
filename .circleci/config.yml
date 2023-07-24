@@ -1,7 +1,5 @@
-
 version: 2.1
 jobs:
-  
   deploy:
     docker:
       - image: circleci/aws-cli # This image includes the AWS CLI tools
@@ -10,7 +8,7 @@ jobs:
       - run:
           name: Deploy to S3
           command: |
-            aws s3 cp ../index.html s3://jay-static 
+            aws s3 cp index.html s3://jay-static/ --acl public-read
           environment:
             AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
             AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
