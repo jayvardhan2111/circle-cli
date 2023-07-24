@@ -3,6 +3,10 @@ orbs:
   aws-cli: circleci/aws-cli@4.0.0
 jobs:
   deploy:
+    environment:
+      AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+      AWS_DEFAULT_REGION: "ap-south-1"
     docker:
       - image: amazon/aws-cli
     steps:
@@ -13,11 +17,6 @@ jobs:
             env
             ls -a
             aws s3 ls
-
-          environment:
-            AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
-            AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
-            AWS_DEFAULT_REGION: "ap-south-1"
 
 workflows:
   version: 2
