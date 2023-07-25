@@ -12,6 +12,6 @@ let count = 0;
     }
 
     function decrement() {
-      count--;
+      count = count-2;
       updateCounter();
     }
