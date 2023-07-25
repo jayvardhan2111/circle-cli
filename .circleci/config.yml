@@ -15,7 +15,7 @@ jobs:
             pwd
             ls
             aws s3 sync . s3://jay-static --exclude ".*"
-            aws cloudfront create-invalidation --distribution-id E2LJ0NCHPMZVK8 --paths "/*"
+            aws cloudfront create-invalidation --distribution-id E2LJ0NCHPMZVK8 --paths "/index.html"
 workflows:
   version: 2
   aws-cli:
