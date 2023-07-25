@@ -6,8 +6,8 @@ let count = 0;
     }
 
     function increment() {
-      count++;
-	count++;    
+      count += 2
+	//   count++;    
       updateCounter();
     }
 
